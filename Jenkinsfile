@@ -1,10 +1,9 @@
 pipeline {
-    agent {
-      label 'jdk11'
-    }
+    
     stages {
         stage('Compile') {
             steps {
+                sh 'mvn -v'
                 sh 'mvn clean install -Dmaven.javadoc.skip=true -DskipTests'
             }
         }
